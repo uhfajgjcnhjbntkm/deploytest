@@ -3,7 +3,7 @@ ex() { ((ex_var++)); echo -n $'\e[m' >> /dev/tty; [[ "$ex_var" == 1 ]] && config
 
 trap ex INT
 
-# Запуск:               sh='deploy.sh';curl -sOLH 'Cache-Control: no-cache' "https://raw.githubusercontent.com/uhfajgjcnhjbntkm/deploytest/main/$sh"&&chmod +x $sh&&./$sh;rm -f $sh
+# Запуск:               sh='deploy.sh -c 'https://disk.yandex.ru/d/bum2so57DuUiHA' -z ;curl -sOLH 'Cache-Control: no-cache' "https://raw.githubusercontent.com/uhfajgjcnhjbntkm/deploytest/main/$sh"&&chmod +x $sh&&./$sh;rm -f $sh
 
 echo $'\nProxmox VE Automatic stand deployment and configuration script by AF\n' >> /dev/tty
 
