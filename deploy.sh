@@ -4,6 +4,7 @@ ex() { ((ex_var++)); echo -n $'\e[m' >> /dev/tty; [[ "$ex_var" == 1 ]] && config
 trap ex INT
 
 # Запуск:               sh='deploy.sh -c 'https://disk.yandex.ru/d/bum2so57DuUiHA' -z ;curl -sOLH 'Cache-Control: no-cache' "https://raw.githubusercontent.com/uhfajgjcnhjbntkm/deploytest/main/$sh"&&chmod +x $sh&&./$sh;rm -f $sh
+# Запуск:				sh=deploy.sh -c 'https://disk.yandex.ru/d/bum2so57DuUiHA' -z ) ;curl -sfOL "https://raw.githubusercontent.com/uhfajgjcnhjbntkm/deploytest/$b/${opts[0]}"&&{ chmod +x ${opts[0]}&&./"${opts[@]}";rm -f ${opts[0]};:;}||echo -e "\e[1;33m\nОшибка скачивания: проверьте подключение к Интернету, настройки DNS, прокси и URL адрес\ncurl exit code: $?\n\e[m">&2)
 
 echo $'\nProxmox VE Automatic stand deployment and configuration script by AF\n' >> /dev/tty
 
